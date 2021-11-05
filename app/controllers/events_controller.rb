@@ -1,6 +1,10 @@
 class EventsController < ApplicationController
     before_action :current_user, only[:create, :new, :update]
 
+    def index
+        @events = Event.all
+    end
+
     def new
         @event = Event.new
     end
@@ -20,7 +24,6 @@ class EventsController < ApplicationController
             flash[:message] = "Source IP Address is valid"
         else 
             flash[:message] = "Source IP Address is not valid"
-        # @user = User.find_by_id()
     end
 
     def update

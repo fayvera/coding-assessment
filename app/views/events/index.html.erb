@@ -1,0 +1,7 @@
+<div class='all-event-wrapper'>
+    <div class="single-event-container">
+        <% @events.each do |event| %>
+            <h1><%= link_to event.id, event_path  %> </h1>
+        <% end %>
+    </div>
+</div>
