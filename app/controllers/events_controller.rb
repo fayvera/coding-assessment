@@ -11,6 +11,7 @@ class EventsController < ApplicationController
 
     def create
         @event = Event.new(event_params)
+        #if we don't want to create invalid events by checking them before saving
         if @event.valid?
             @event.save
         else 
