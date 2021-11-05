@@ -25,6 +25,7 @@ class EventsController < ApplicationController
             flash[:message] = "Source IP Address is valid"
         else 
             flash[:message] = "Source IP Address is not valid"
+        end
     end
 
     def update
