@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+    before_action :current_user, only[:create, :new, :update]
 
     def new
         @event = Event.new
@@ -15,6 +16,11 @@ class EventsController < ApplicationController
 
     def show
         @event = Event.find(event_params)
+        if @event.valid?
+            flash[:message] = "Source IP Address is valid"
+        else 
+            flash[:message] = "Source IP Address is not valid"
+        # @user = User.find_by_id()
     end
 
     def update
